@@ -1,0 +1,29 @@
+
+
+<h1>Home</h1>
+
+<div ng-controller='homepage'>
+
+<form>
+<div ng-repeat="tune in tunedata.data">
+  <ul>
+    <li>
+      <h5>Artist: {{tune.artist}} </h5>
+
+      <h5>Song: {{tune.song}}</h5>
+
+      <audio controls ng-model="tune"   src="{{tune.file.filename}}"></audio>
+
+      {{tune.count}}
+
+      <button ng-click="updateCounter(tune)">Like</button>{{count}}
+
+      <p ng-if="tune.user == user._id">
+        <button ng-click=Delete(tune)>Delete</button>
+      </p>
+
+    </li>
+    <hr>
+  </ul>
+</div>
+</form>
